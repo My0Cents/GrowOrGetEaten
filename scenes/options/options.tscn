@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt8bu3mlsy46o"]
+
+[ext_resource type="Script" path="res://scenes/options/options.gd" id="1_vklq3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vklq3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 254.0
+offset_right = 363.0
+offset_bottom = 277.0
+text = "Difficulty :"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 255.0
+offset_right = 563.0
+offset_bottom = 286.0
+item_count = 3
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Difficult"
+popup/item_1/id = 1
+popup/item_2/text = "Impossible"
+popup/item_2/id = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 329.0
+offset_right = 385.0
+offset_bottom = 360.0
+text = "back"
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

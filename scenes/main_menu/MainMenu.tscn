@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://b53vpemmmtw5i"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/MainMenu.gd" id="1_lhb4d"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lhb4d")
+
+[node name="Grid Container" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -50.5
+offset_right = 35.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Grid Container"]
+layout_mode = 2
+text = "Start"
+
+[node name="Button2" type="Button" parent="Grid Container"]
+layout_mode = 2
+text = "Options"
+
+[node name="Button3" type="Button" parent="Grid Container"]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 619.0
+offset_top = 313.0
+offset_right = 885.0
+offset_bottom = 343.0
+text = "Aint nobody got time for that !"
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 622.0
+offset_top = 351.0
+offset_right = 993.0
+offset_bottom = 374.0
+text = "You're on a browser, where are you quittng to ?!"
+
+[connection signal="pressed" from="Grid Container/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Grid Container/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Grid Container/Button3" to="." method="_on_button_3_pressed"]
